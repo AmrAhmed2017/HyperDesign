@@ -23,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         View view = this.findViewById(R.id.recycler_view);
+        //controller
         controller = new Controller(view);
         if (isNetworkAvailable())
             controller.getProduct();
         else
-            Toast.makeText(this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Check your internet connection", Toast.LENGTH_LONG).show();
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
